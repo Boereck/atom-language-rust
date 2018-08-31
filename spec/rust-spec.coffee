@@ -763,3 +763,7 @@ describe 'Rust grammar', ->
     expect(tokens[0][5]).toEqual value: 'a', scopes: ['source.rust', 'meta.type_params.rust', 'storage.modifier.lifetime.rust', 'entity.name.lifetime.rust']
     expect(tokens[0][13]).toEqual value: "'", scopes: ['source.rust', 'meta.type_params.rust', 'storage.modifier.lifetime.rust']
     expect(tokens[0][14]).toEqual value: 'a', scopes: ['source.rust', 'meta.type_params.rust', 'storage.modifier.lifetime.rust', 'entity.name.lifetime.rust']
+
+  it 'tokenize ? operator', ->
+    tokens = grammar.tokenizeLines("let s = env::args().next()?;")
+    expect(tokens[0][11]).toEqual value: '?', scopes: ['source.rust', 'keyword.operator.questionmark.rust']

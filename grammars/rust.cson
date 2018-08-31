@@ -61,6 +61,11 @@
     'name': 'keyword.operator.sigil.rust'
     'match': '[&*](?=[a-zA-Z0-9_\\(\\[\\|\\"]+)'
   }
+  'questionmark': {
+    'comment': 'Questionmark postfix operator'
+    'name': 'keyword.operator.questionmark.rust'
+    'match': '\\?'
+  }
   'self': {
     'comment': 'Self variable'
     'name': 'variable.language.rust'
@@ -289,6 +294,7 @@
   }
   { 'include': '#unsafe' }
   { 'include': '#sigils' }
+  { 'include': '#questionmark' }
   { 'include': '#self' }
   { 'include': '#mut' }
   { 'include': '#box' }
